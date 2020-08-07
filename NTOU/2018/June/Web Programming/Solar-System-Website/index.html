@@ -1,0 +1,807 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do not click the black hole</title>
+    <style>
+        #dontMessage {
+            background-color: black;
+            height: 100%;
+            width: 100%;
+            display: none;
+            font-size: 40vmin;
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            text-align: center;
+            color: white;
+        }
+
+        .blackHole {
+            position: absolute;
+            display: none;
+            width: 16vmin;
+            height: 16vmin;
+            left: calc(90%);
+            top: calc(78%);
+            transition: 2s ease;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+            .blackHole:hover {
+                transform: scale(1.6);
+            }
+
+        #preloadPrecentage {
+            color: white;
+            font-size: 400%;
+            left: calc(42%);
+            position: absolute;
+            top: calc(70%);
+            text-align: center;
+        }
+
+        #preloadContainer {
+            height: 400px;
+            left: calc(50% - 200px);
+            position: absolute;
+            top: calc(50% - 200px);
+            width: 400px;
+        }
+
+            #preloadContainer #sun {
+                background-color: yellow;
+                border-radius: 50%;
+                -webkit-box-shadow: 0 0 30px white;
+                box-shadow: 0 0 30px white;
+                height: 100px;
+                left: 150px;
+                position: absolute;
+                top: 150px;
+                width: 100px;
+            }
+
+            #preloadContainer .orbit {
+                border: solid;
+                border-color: white transparent transparent transparent;
+                border-radius: 50%;
+                border-width: 1px 1px 0 0;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                position: absolute;
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+                -webkit-transform-origin: center;
+                transform-origin: center;
+            }
+
+                #preloadContainer .orbit#earth-orbit {
+                    -webkit-animation: orbit 9.1s linear infinite;
+                    animation: orbit 9.1s linear infinite;
+                    height: 300px;
+                    left: 50px;
+                    top: 50px;
+                    width: 300px;
+                }
+
+                #preloadContainer .orbit#moon-orbit {
+                    -webkit-animation: orbit 0.7s linear infinite;
+                    animation: orbit 0.7s linear infinite;
+                    height: 80px;
+                    left: -25px;
+                    top: -25px;
+                    width: 80px;
+                }
+
+                #preloadContainer .orbit .globe {
+                    border-radius: 50%;
+                    position: absolute;
+                }
+
+                    #preloadContainer .orbit .globe#earth {
+                        background: aqua;
+                        height: 30px;
+                        right: 28px;
+                        top: 28px;
+                        width: 30px;
+                    }
+
+                    #preloadContainer .orbit .globe#moon {
+                        background: #d6d6d6;
+                        height: 12px;
+                        right: 2px;
+                        top: 8px;
+                        width: 12px;
+                    }
+
+        @-webkit-keyframes orbit {
+            to {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes orbit {
+            to {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        body {
+            font-family: Monospace;
+            background: black;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        #buttonTable {
+            display: none;
+            width: 100%;
+        }
+
+        table {
+            position: absolute;
+        }
+
+        button, input {
+            width: 100%;
+            font-size: 100%;
+            border-radius: 5px;
+        }
+
+            button:hover {
+                background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+                animation: slidebg 2s linear infinite;
+            }
+
+        @keyframes slidebg {
+            to {
+                background-position: 20vw;
+            }
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+
+        body svg {
+            font: 5em/1 Open Sans, Impact;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .text {
+            fill: none;
+            stroke-width: 3;
+            stroke-linejoin: round;
+            stroke-dasharray: 70 330;
+            stroke-dashoffset: 0;
+            -webkit-animation: stroke 6s infinite linear;
+            animation: stroke 6s infinite linear;
+            -webkit-user-select: none; /* Safari 3.1+ */
+            -moz-user-select: none; /* Firefox 2+ */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none; /* Standard syntax */
+        }
+
+            .text:nth-child(5n + 1) {
+                stroke: #F2385A;
+                -webkit-animation-delay: -1.2s;
+                animation-delay: -1.2s;
+            }
+
+            .text:nth-child(5n + 2) {
+                stroke: #F5A503;
+                -webkit-animation-delay: -2.4s;
+                animation-delay: -2.4s;
+            }
+
+            .text:nth-child(5n + 3) {
+                stroke: #E9F1DF;
+                -webkit-animation-delay: -3.6s;
+                animation-delay: -3.6s;
+            }
+
+            .text:nth-child(5n + 4) {
+                stroke: #56D9CD;
+                -webkit-animation-delay: -4.8s;
+                animation-delay: -4.8s;
+            }
+
+            .text:nth-child(5n + 5) {
+                stroke: #3AA1BF;
+                -webkit-animation-delay: -6s;
+                animation-delay: -6s;
+            }
+
+        @-webkit-keyframes stroke {
+            100% {
+                stroke-dashoffset: -400;
+            }
+        }
+
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: -400;
+            }
+        }
+        /* Other styles */
+        svg {
+            position: absolute;
+            z-index: 100;
+            top: 80%;
+            left: 0%;
+            width: 20%;
+            height: 20%;
+            display: none;
+        }
+
+        .arc:before, .arc:after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 4px solid #000;
+            top: -4px;
+            left: -4px;
+            border-color: hsl(276, 1%, 23%) transparent transparent transparent;
+            border-radius: 50%;
+            z-index: -8;
+            content: "";
+        }
+
+        .arc:after {
+            border-color: transparent transparent hsl(276, 1%, 68%) transparent;
+        }
+
+        .arc {
+            position: absolute;
+            display: block;
+            width: 85%;
+            height: 85%;
+            margin: 7.5%;
+            border-radius: 50%;
+            animation: 15s rotate linear infinite;
+            box-shadow: 0px 0px 0px 2px #fff2;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(90deg);
+            }
+
+            100% {
+                transform: rotate(810deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="sound" preload="auto">
+        <source src="sound.wav"
+                type="audio/mpeg">
+        Browser does not support audio tag
+    </audio>
+    <audio id="sound2" preload="auto" loop="loop">
+        <source src="sound2.wav"
+                type="audio/mpeg">
+        Browser does not support audio tag
+    </audio>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="three.js-master/build/three.js"></script>
+    <script type="text/javascript" src="three.js-master\examples\js\controls\OrbitControls.js"></script>
+    <script type="text/javascript">
+        sound = document.getElementById("sound");
+        sound2 = document.getElementById("sound2");
+        var manager;
+        var dontClick = 0;
+        function initial() {
+            manager = new THREE.LoadingManager;
+            manager.onStart = function () {
+                console.log("start");
+            }
+            manager.onLoad = function () {
+                document.getElementById("preloadContainer").style.display = "none";
+                document.getElementById("preloadPrecentage").style.display = "none";
+                $("#buttonTable").show();
+                $("#messageBox").show();
+                $(".blackHole").show();
+                $(".blackHole").on("click", function () {
+                    if (dontClick == 0) {
+                        dontClick++;
+                        $("#dontMessage").html("跟你說不要點了");
+                        $("#dontMessage").show();
+                        document.getElementById("message0").innerHTML = '跟你說';
+                        document.getElementById("message1").innerHTML = '不要點了';
+                        setTimeout(function () {
+                            $("#dontMessage").hide();
+                            document.getElementById("message0").innerHTML = '太陽系';
+                            document.getElementById("message1").innerHTML = 'Solar System';
+                        }, 2000);
+                        console.log(dontClick);
+                        return;
+                    }
+                    if (dontClick == 1) {
+                        sound.play();
+                        dontClick++;
+                        $("#dontMessage").html("母湯喔");
+                        $("#dontMessage").css("padding-top", "10%");
+                        $("#dontMessage").show();
+                        document.getElementById("message0").innerHTML = '';
+                        document.getElementById("message1").innerHTML = '母湯喔';
+                        setTimeout(function () {
+                            $("#dontMessage").hide();
+                            document.getElementById("message0").innerHTML = '太陽系';
+                            document.getElementById("message1").innerHTML = 'Solar System';
+                        }, 2000);
+                        console.log(dontClick);
+                        return;
+                    }
+                    var blackHolePos = $(".blackHole").offset();
+                    blackHolePos.top = "50%";
+                    blackHolePos.left = "50%";
+                    console.log(blackHolePos);
+                    $(".blackHole").css("top", "40%");
+                    $(".blackHole").css("left", "45%");
+                    //$(".blackHole").css("transform", "scale(6)");
+                    rotateSpeed = 100;
+                    sound2.play()
+                    var rotateValue = 5;
+                    var intervalTime = 50;
+                    var scaleSize = 1.2;
+                    var bodySize = 1;
+                    $("body").css("transform", "rotate(" + rotateValue + "deg)");
+                    setInterval(function () {
+                        $("body").css("transform", "rotate(" + rotateValue + "deg)");
+                        rotateValue += Math.floor(Math.random() * 40) - 20;
+                        $(".blackHole").css("transform", "scale(" + scaleSize + ")");
+                        $("#containContainer").css("transform", "scale(" + bodySize + ")");
+                        $("#container").css("transform", "scale(" + bodySize + ")");
+                        scaleSize += 0.2;
+                        if (bodySize > 0)
+                            bodySize -= 0.01;
+                    }, intervalTime);
+                });//end of click
+                document.getElementById("preloadPrecentage").innerHTML = "100%";
+                start();
+                console.log("done");
+            };
+            manager.onProgress = function (item, loaded, total) {
+                document.getElementById("preloadPrecentage").innerHTML = Math.floor((loaded) / total * 100) + "%";
+                console.log(item, loaded, total);
+            };
+            scene = new THREE.Scene();//创建一个新场景
+            //添加一个透视相机
+            camera = new THREE.PerspectiveCamera(cameraDistance,
+                window.innerWidth / window.innerHeight, 1, 1000);
+            camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z);//设置相机位置
+            camera.lookAt(new THREE.Vector3(0, 0, 0));//让相机指向原点
+            //渲染
+            //antialias:true增加抗锯齿效果
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setClearColor(new THREE.Color(0x00000));//设置窗口背景颜色为黑
+            renderer.setSize(window.innerWidth, window.innerHeight);//设置窗口尺寸
+            renderer.shadowMap.enabled = true;
+            //将renderer关联到container，这个过程类似于获取canvas元素
+            earth();
+            moon();
+            sun();
+            mercury();
+            venus();
+            mars();
+            jupiter();
+            saturn();
+            uranus();
+            neptune();
+            pluto();
+            makeStars();
+        }
+        var sunLight;
+        var container;
+        var camera, scene, renderer;
+        var controls, cameraTarget = new THREE.Vector3(0, 0, 0);
+        var rotateSpeed = 0.0008;
+        function start() {
+            main();
+            render();
+        }
+        var cameraDistance = 60;
+        var ballSize = 0.65;//basic on earth
+        var cameraPos = {
+            x: 0,
+            y: 0,
+            z: cameraDistance
+        }
+        function main() {
+            container = document.getElementById("container");
+            document.body.appendChild(container);
+            container.appendChild(renderer.domElement);
+            controls = new THREE.OrbitControls(camera, container);
+            controls.minDistance = cameraDistance * 0.01;
+            controls.maxDistance = cameraDistance * 2;
+            //给场景添加光源
+            //自然光
+            var ambientLight = new THREE.AmbientLight(0x999999);
+            scene.add(ambientLight);
+            sunLight = new THREE.PointLight(0xDDDDAA, 2, 100);
+            scene.add(sunLight);
+            window.addEventListener('resize', onWindowResize, false);
+            $('#sun').click(function () {
+                clickPlanet(sun.position, '太陽', 'Sun', sun.geometry.parameters.radius);
+            });
+            $('#mercury').click(function () {
+                clickPlanet(mercury.position, '水星', 'Mercury', mercury.geometry.parameters.radius + 0.1);
+            });
+            $('#venus').click(function () {
+                clickPlanet(venus.position, '金星', 'Venus', venus.geometry.parameters.radius);
+            });
+            $('#earth').click(function () {
+                clickPlanet(earth.position, '地球', 'Earth', earth.geometry.parameters.radius);
+            });
+            $('#mars').click(function () {
+                clickPlanet(mars.position, '火星', 'Mars', mars.geometry.parameters.radius);
+            });
+            $('#jupiter').click(function () {
+                clickPlanet(jupiter.position, '木星', 'Jupiter', jupiter.geometry.parameters.radius);
+            });
+            $('#saturn').click(function () {
+                clickPlanet(saturn.position, '土星', 'Saturn', saturn.geometry.parameters.radius);
+            });
+            $('#uranus').click(function () {
+                clickPlanet(uranus.position, '天王星', 'Uranus', uranus.geometry.parameters.radius);
+            });
+            $('#neptune').click(function () {
+                clickPlanet(neptune.position, '海王星', 'Neptune', neptune.geometry.parameters.radius);
+            });
+            $('#pluto').click(function () {
+                clickPlanet(pluto.position, '冥王星', 'Pluto', pluto.geometry.parameters.radius + 0.1);
+            });
+            $('#updateSpeed').click(function () {
+                var speed = parseFloat(document.getElementById("speed").value);
+                if (!isNaN(speed)) rotateSpeed = speed * 0.00004;
+            });
+        }//end of main
+        function clickPlanet(position, name0, name1, distance) {
+            cameraTarget = position;//換看的對象
+            controls.target = position;//換視角
+            camera.position.set(position.x + distance * 2, position.y + distance * 2, position.z + distance * 2);
+            $("#message0").html(name0);
+            $("#message1").html(name1);
+        }
+        function onWindowResize() {
+            //$("#massegeBox").css("top", )
+            /*document.getElementById("message0").style.top = window.innerHeight - 80 + 'px';
+            document.getElementById("message1").style.top = window.innerHeight - 80 + 'px';*/
+            camera.aspect = window.innerWidth / window.innerHeight;//aspect是甚麼?
+            camera.updateProjectionMatrix();//camera 更新
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        function makeStars() {
+            var starNum = 20000;
+            var positions = new Float32Array(starNum * 3);
+            var colors = new Float32Array(starNum * 3);
+            var gap = 120;
+            for (let i = 0; i < positions.length; i += 3) {
+                let x = (Math.random() * 2 * gap);
+                let y = (Math.random() * 2 * gap);
+                let z = (Math.random() * 2 * gap);
+                var pos = { x, y, z };
+                var biggest = x > y ? x > z ? 'x' : 'z' : y > z ? 'y' : 'z';
+                if (pos[biggest] < gap) {
+                    pos[biggest] += gap;
+                    x = pos['x'];//可能被pos[biggest]改掉
+                    y = pos['y'];
+                    z = pos['z'];
+                }
+                positions[i] = x * (Math.random() < 0.5 ? 1 : -1);
+                positions[i + 1] = y * (Math.random() < 0.5 ? 1 : -1);
+                positions[i + 2] = z * (Math.random() < 0.5 ? 1 : -1);
+                let color = new THREE.Color();
+                color.setRGB((Math.random() + 1) / 2, (Math.random() + 1) / 2, (Math.random() + 1) / 2)
+                colors[i] = color.r;
+                colors[i + 1] = color.g;
+                colors[i + 2] = color.b;
+            }
+            var bufferGeometry = new THREE.BufferGeometry();
+            bufferGeometry.addAttribute("position", new THREE.BufferAttribute(positions, 3));
+            bufferGeometry.addAttribute("color", new THREE.BufferAttribute(colors, 3));
+            bufferGeometry.computeBoundingSphere();
+            var stars = new THREE.Points(bufferGeometry, new THREE.PointsMaterial({
+                size: 0.5,
+                vertexColors: THREE.VertexColors
+            }))
+            scene.add(stars);
+        }
+        //创建一个球
+        var earth;
+        var moon;
+        var sun;
+        var mercury;//水星
+        var venus;
+        var mars; //火星
+        var jupiter;//木星
+        var saturn;//土星
+        var saturnRing1;
+        var saturnRing2;
+        var uranus;//天王星
+        var uranusRing;
+        var neptune;//海王星
+        var pluto;//冥王星
+        var angleEarth = 1.57;
+        var angleMoon = 1.57;
+        var angleMoon = 1.57;
+        var angleMecury = 1.57;
+        var angleVenus = 1.57;
+        var angleMars = 1.57;
+        var angleJupiter = 1.57;
+        var angleSaturn = 3.6;
+        var angleUranus = 1.8;
+        var angleNeptune = -1;
+        var anglePluto = 1.2;
+
+        var earthDistance = ballSize * 25;
+        var mercuryDistance = earthDistance * 0.6;//水星
+        var venusDistance = earthDistance * 0.8;
+        var marsDistance = earthDistance * 1.2; //火星
+        var jupiterDistance = earthDistance * 1.6;//木星
+        var saturnDistance = earthDistance * 1.8;//土星
+        var uranusDistance = earthDistance * 2.0;//天王星
+        var neptuneDistance = earthDistance * 2.2;//海王星
+        var plutoDistance = earthDistance * 2.4;//冥王星
+        function earth() {
+            earth = makePlanet(ballSize, 'images/earth_8k.jpg', earthDistance);//make model
+            earth.rotation.z += 0.5;
+            earth.position.set(0, 0, 0);//set earth position
+            scene.add(earth);//add earth to scene
+        }
+        function moon() {
+            moon = makePlanet(ballSize * 0.28, 'images/moon.jpg');
+            moon.rotation.y += Math.PI;
+            scene.add(moon);
+        }
+        function sun() {
+            sun = makePlanet(ballSize * 8, 'images/sun.jpg');
+            var texture = new THREE.TextureLoader().load('images/sun.jpg');
+            sun.material.lightMap = texture;
+            sun.material.lightMapIntensity = 0.8;
+            sun.position.set(0, 0, 0);//set sun position
+            scene.add(sun);//add sun to scene
+        }
+        function mercury() {
+            mercury = makePlanet(ballSize * 0.6, 'images/mercury.jpg', mercuryDistance);
+            mercury.position.set(0, 0, 0);//set sun position
+            scene.add(mercury);//add sun to scene
+        }
+        function venus() {
+            venus = makePlanet(ballSize, 'images/venus.jpg', venusDistance);
+            venus.position.set(0, 0, 0);//set sun position
+            scene.add(venus);//add sun to scene
+        }
+        function mars() {
+            mars = makePlanet(ballSize * 0.7, 'images/mars.jpg', marsDistance);
+            mars.position.set(0, 0, 0);//set sun position
+            scene.add(mars);//add sun to scene
+        }
+        function jupiter() {
+            jupiter = makePlanet(ballSize * 2, 'images/jupiter.jpg', jupiterDistance);
+            jupiter.position.set(0, 0, 0);//set sun position
+            scene.add(jupiter);//add sun to scene
+        }
+        function saturn() {
+            saturn = makePlanet(ballSize * 1.8, 'images/saturn.jpg', saturnDistance);
+            saturn.position.set(0, 0, 0);//set sun position
+            scene.add(saturn);//add sun to scene
+            saturnRing1 = new THREE.Mesh(new THREE.RingGeometry(ballSize * 2 + 0.2, ballSize * 2 + 0.5, 32, 6),
+                new THREE.MeshLambertMaterial({
+                    color: 0xCC6600,
+                    side: THREE.DoubleSide,
+                    transparent: true,
+                    opacity: 0.4
+                }));
+            saturnRing1.rotation.x = Math.PI / 3;
+            saturnRing1.rotation.y = Math.PI / 4;
+            saturnRing2 = new THREE.Mesh(new THREE.RingGeometry(ballSize * 2 + 0.6, ballSize * 2 + 0.8, 32, 6),
+                new THREE.MeshLambertMaterial({
+                    color: 0xEE7700,
+                    side: THREE.DoubleSide,
+                    transparent: true,
+                    opacity: 0.4
+                }));
+            saturnRing2.rotation.x = Math.PI / 3;
+            saturnRing2.rotation.y = Math.PI / 4;
+            scene.add(saturnRing1, saturnRing2);
+        }
+        function uranus() {
+            uranus = makePlanet(ballSize * 1.5, 'images/uranus.jpg', uranusDistance);
+            uranus.position.set(0, 0, 0);//set sun position
+            uranusRing = new THREE.Mesh(new THREE.RingGeometry(ballSize * 1.5 + 0.4, ballSize * 1.5 + 0.5, 32, 6),
+                new THREE.MeshLambertMaterial({
+                    color: 0xFFFFBB,
+                    side: THREE.DoubleSide,
+                    transparent: true,
+                    opacity: 0.4
+                }));
+            scene.add(uranus);//add sun to scene
+            scene.add(uranusRing)
+        }
+        function neptune() {
+            neptune = makePlanet(ballSize * 1.5, 'images/neptune.jpg', neptuneDistance);
+            neptune.position.set(0, 0, 0);//set sun position
+            scene.add(neptune);//add sun to scene
+        }
+        function pluto() {
+            pluto = makePlanet(ballSize * 0.5, 'images/pluto.jpg', plutoDistance);
+            pluto.position.set(0, 0, 0);//set sun position
+            scene.add(pluto);//add sun to scene
+        }
+        function makePlanet(size, image, distance) {
+            var texture;
+            if (image) {
+                texture = new THREE.TextureLoader(manager).load(image);
+            }
+            var sunGeo = new THREE.SphereGeometry(size, 40, 40);
+            var sunMat = new THREE.MeshLambertMaterial({//construct material
+                map: texture,
+                //color: 0xFFFFBB,
+                wireframe: false,
+            });
+            if (distance) {
+                var track = new THREE.Mesh(new THREE.RingGeometry(distance - 0.02, distance + 0.02, 128, 1),
+                    new THREE.MeshBasicMaterial({
+                        color: 0x888888,
+                        side: THREE.DoubleSide
+                    }));
+                track.rotation.x = Math.PI / 2;
+                scene.add(track);
+            }
+            return new THREE.Mesh(sunGeo, sunMat);//make model
+        }
+        function rotation() {
+            angleEarth += rotateSpeed;
+            angleMoon += rotateSpeed * 365 / 27.32;
+            angleMecury += rotateSpeed * 4.16;
+            angleVenus += rotateSpeed * 1.6;
+            angleMars += rotateSpeed * 0.53;
+            angleJupiter += rotateSpeed * 0.08;
+            angleSaturn += rotateSpeed * 0.033;
+            angleUranus += rotateSpeed * 0.012;
+            angleNeptune += rotateSpeed * 0.006;
+            anglePluto += rotateSpeed * 0.004;
+            earth.rotation.y += rotateSpeed * 365;
+            moon.rotation.y += rotateSpeed * 365 / 27.32;
+            sun.rotation.y += rotateSpeed * 14.6;
+            mercury.rotation.y += rotateSpeed * 6.205;
+            venus.rotation.y -= rotateSpeed * 1.46;
+            mars.rotation.y += rotateSpeed * 365;
+            jupiter.rotation.y += rotateSpeed * 894.25;
+            saturn.rotation.y += rotateSpeed * 857.75;
+            uranus.rotation.y -= rotateSpeed * 489.1;
+            neptune.rotation.y += rotateSpeed * 456.25;
+            pluto.rotation.y -= rotateSpeed * 56.94;
+            sunLight.position.x = sun.position.x;
+            sunLight.position.z = sun.position.z;
+            earth.position.x = earthDistance * Math.sin(angleEarth);
+            earth.position.z = earthDistance * Math.cos(angleEarth);
+            moon.position.x = earth.position.x + earthDistance * 0.08 * Math.sin(angleMoon);
+            moon.position.y = earthDistance * 0.08 * Math.sin(angleMoon) / 4;
+            moon.position.z = earth.position.z + earthDistance * 0.08 * Math.cos(angleMoon);
+            mercury.position.x = mercuryDistance * Math.sin(angleMecury);//水星
+            mercury.position.z = mercuryDistance * Math.cos(angleMecury);//水星
+            venus.position.x = venusDistance * Math.sin(angleVenus);//金星
+            venus.position.z = venusDistance * Math.cos(angleVenus);
+            mars.position.x = marsDistance * Math.sin(angleMars); //火星
+            mars.position.z = marsDistance * Math.cos(angleMars); //火星
+            jupiter.position.x = jupiterDistance * Math.sin(angleJupiter);//木星
+            jupiter.position.z = jupiterDistance * Math.cos(angleJupiter);//木星
+            saturn.position.x = saturnDistance * Math.sin(angleSaturn);//土星
+            saturn.position.z = saturnDistance * Math.cos(angleSaturn);//土星
+            saturnRing1.position.x = saturn.position.x;
+            saturnRing1.position.z = saturn.position.z;
+            saturnRing2.position.x = saturn.position.x;
+            saturnRing2.position.z = saturn.position.z;
+            uranus.position.x = uranusDistance * Math.sin(angleUranus);//天王星
+            uranus.position.z = uranusDistance * Math.cos(angleUranus);//天王星
+            uranusRing.position.x = uranus.position.x;
+            uranusRing.position.z = uranus.position.z;
+            neptune.position.x = neptuneDistance * Math.sin(angleNeptune);//海王星
+            neptune.position.z = neptuneDistance * Math.cos(angleNeptune);//海王星
+            pluto.position.x = plutoDistance * Math.sin(anglePluto);//冥王星
+            pluto.position.z = plutoDistance * Math.cos(anglePluto);//冥王星
+        }
+        //渲染
+        function render() {
+            requestAnimationFrame(render);
+            rotation();
+            controls.update();
+            camera.lookAt(cameraTarget);
+            renderer.render(scene, camera);
+        }
+        function ppt(){
+            window.open("https://drive.google.com/file/d/1D5PuKdkPf-6yVLdsedO5O7Na49nfVdAk/view?usp=sharing");//捷克改這裡啦，網址貼這
+    	}
+        initial();
+    </script>
+    <div id="containContainer">
+        <div id="container">
+        </div>
+        <table id="buttonTable" cellspacing="2">
+            <tr>
+                <td><button id="sun">sun</button></td>
+                <td><button id="mercury">mercury</button></td>
+                <td><button id="venus">venus</button></td>
+                <td><button id="earth">earth</button></td>
+                <td> <button id="mars">mars</button></td>
+                <td> <button id="jupiter">jupiter</button></td>
+                <td> <button id="saturn">saturn</button></td>
+                <td> <button id="uranus">uranus</button></td>
+                <td><button id="neptune">neptune</button></td>
+                <td><button id="pluto">pluto</button></td>
+                <td></td>
+                <td><input id="speed" value="20" type="text" /></td>
+                <td><button id="updateSpeed">updateSpeed</button></td>
+                <td><button onclick="ppt()">說明文件</button></td>
+            </tr>
+        </table>
+        <div id="preloadContainer">
+            <div id="sun"></div>
+            <div class="orbit" id="earth-orbit">
+                <div class="globe" id="earth">
+                    <div class="orbit" id="moon-orbit">
+                        <div class="globe" id="moon"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="preloadPrecentage">0%</div>
+        <svg viewBox="0 0 480 250" id="messageBox">
+            <!-- Symbol-->
+            <symbol id="s-text" unselectable="on">
+                <text text-anchor="middle" x="52%" y="22%" dy=".35em" id="message0">太陽系</text>
+                <text text-anchor="middle" x="52%" y="60%" dy=".35em" id="message1">Solar System</text>
+            </symbol>
+            <!-- Duplicate symbols-->
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+        </svg>
+
+        <div id="dontMessage">Don't!</div>
+    </div>
+
+    <div id="blackHole0" class="blackHole">
+        <div class="arc">
+            <div class="arc">
+                <div class="arc">
+                    <div class="arc">
+                        <div class="arc">
+                            <div class="arc">
+                                <div class="arc">
+                                    <div class="arc">
+                                        <div class="arc">
+                                            <div class="arc">
+                                                <div class="arc">
+                                                    <div class="arc">
+                                                        <div class="arc">
+                                                            <div class="arc">
+                                                                <div class="arc">
+                                                                    <div class="arc"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
