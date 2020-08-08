@@ -1,0 +1,22 @@
+﻿  jacobi.c
+  main.c
+d:\gd\數值分析\hw\hw6\main.c(234): warning C4101: 'max': 未參考的區域變數
+d:\gd\數值分析\hw\hw6\main.c(234): warning C4101: 'min': 未參考的區域變數
+d:\gd\數值分析\hw\hw6\main.c(233): warning C4101: 'j': 未參考的區域變數
+d:\gd\數值分析\hw\hw6\main.c(233): warning C4101: 'i': 未參考的區域變數
+d:\gd\數值分析\hw\hw6\main.c(235): warning C4101: 'condNum': 未參考的區域變數
+d:\gd\數值分析\hw\hw6\main.c(274): warning C4473: 'fprintf' : 傳遞給格式字串的引數不足
+  d:\gd\數值分析\hw\hw6\main.c(274): note: 預留位置及其參數需要 1 個 variadic 引數，但卻提供了 0 個
+  d:\gd\數值分析\hw\hw6\main.c(274): note: 缺少 variadic 引數 1 (其為格式字串 '%d' 所需)
+d:\gd\數值分析\hw\hw6\main.c(257): warning C4101: 'max': 未參考的區域變數
+d:\gd\數值分析\hw\hw6\main.c(257): warning C4101: 'min': 未參考的區域變數
+d:\gd\數值分析\hw\hw6\main.c(256): warning C4101: 'j': 未參考的區域變數
+d:\gd\數值分析\hw\hw6\main.c(258): warning C4101: 'condNum': 未參考的區域變數
+d:\gd\數值分析\hw\hw6\main.c(287): warning C4101: 'max': 未參考的區域變數
+d:\gd\數值分析\hw\hw6\main.c(287): warning C4101: 'min': 未參考的區域變數
+d:\gd\數值分析\hw\hw6\main.c(286): warning C4101: 'j': 未參考的區域變數
+d:\gd\數值分析\hw\hw6\main.c(286): warning C4101: 'i': 未參考的區域變數
+d:\gd\數值分析\hw\hw6\main.c(288): warning C4101: 'condNum': 未參考的區域變數
+  vec_mtx.c
+  正在產生程式碼...
+  HW6.vcxproj -> D:\GD\數值分析\HW\HW6\x64\Debug\HW6.exe

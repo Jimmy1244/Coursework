@@ -1,0 +1,8 @@
+N = 3
+offDiag[1] = 26.585183
+offDiag[2] = 2.513205
+offDiag[3] = 1.318429
+offDiag[4] = 0.396615
+offDiag[5] = 0.006377
+offDiag[6] = 0.000047
+offDiag[7] = 0.000000
