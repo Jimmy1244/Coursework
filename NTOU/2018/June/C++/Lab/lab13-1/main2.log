@@ -1,0 +1,19 @@
+LoggedStudentList::appendEntry()
+	Mary Chen 	111111111	0933111111	Business		John Viega
+LoggedStudentList::appendEntry()
+	John Wang 	222222222	0928222222	Computer Science		Dan Smart
+LoggedStudentList::appendEntry()
+	Mel Lee   	333333333	0968333333	Mechanical Engineering		Ron Rivest
+LoggedStudentList::appendEntry()
+	Bob Tsai  	444444444	0930444444	Electrical Engineering		Alan Laub
+LoggedStudentList::appendEntry()
+	Ron Yang  	555555555	0918555555	Computer Science		Allen Gersho		Singapore
+LoggedStudentList::deleteEntry()  id=444444444
+LoggedStudentList::insertEntry()
+	Carol Chen	333331111	0933333111	Business		John Fowler
+List dumping
+Element[0]: Mary Chen 	111111111	0933111111	Business		John Viega
+Element[1]: John Wang 	222222222	0928222222	Computer Science		Dan Smart
+Element[2]: Mel Lee   	333333333	0968333333	Mechanical Engineering		Ron Rivest
+Element[3]: Carol Chen	333331111	0933333111	Business		John Fowler
+Element[4]: Ron Yang  	555555555	0918555555	Computer Science		Allen Gersho		Singapore

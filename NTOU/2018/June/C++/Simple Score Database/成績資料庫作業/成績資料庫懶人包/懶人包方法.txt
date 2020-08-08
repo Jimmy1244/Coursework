@@ -1,0 +1,1 @@
+cmd 先進到這個資料夾，再輸入 "簡易成績資料庫.exe < dataInput.txt > result.log"
