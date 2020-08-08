@@ -1,0 +1,17 @@
+﻿已經開始建置於 2018/6/12 下午 10:46:50。
+     1>節點 2 (build 目標) 上的專案 "D:\GD\vs2010Project\lab13-1\lab13-1.vcxproj"。
+     1>InitializeBuildStatus:
+         由於指定了 "AlwaysCreate"，因此正在建立 "Debug\lab13-1.unsuccessfulbuild"。
+       ClCompile:
+         所有輸出都是最新的。
+       Link:
+         所有輸出都是最新的。
+         lab13-1.vcxproj -> D:\GD\vs2010Project\lab13-1\Debug\lab13-1.exe
+       FinalizeBuildStatus:
+         正在刪除檔案 "Debug\lab13-1.unsuccessfulbuild"。
+         正在變更時間戳記 "Debug\lab13-1.lastbuildstate"。
+     1>專案 "D:\GD\vs2010Project\lab13-1\lab13-1.vcxproj" (build 目標) 建置完成。
+
+建置成功。
+
+經過時間 00:00:00.04

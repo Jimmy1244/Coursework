@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "俄羅斯方塊", "俄羅斯方塊\俄羅斯方塊.vcxproj", "{97458962-11A1-4D93-8C29-CDE8056D82B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97458962-11A1-4D93-8C29-CDE8056D82B1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{97458962-11A1-4D93-8C29-CDE8056D82B1}.Debug|Win32.Build.0 = Debug|Win32
+		{97458962-11A1-4D93-8C29-CDE8056D82B1}.Release|Win32.ActiveCfg = Release|Win32
+		{97458962-11A1-4D93-8C29-CDE8056D82B1}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1 @@
+到Rect.h的最下面修改pixelSize後重建方案(Alt + Ctrl + F4)
