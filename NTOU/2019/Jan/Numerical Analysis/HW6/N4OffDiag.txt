@@ -1,0 +1,17 @@
+N = 4
+offDiag[1] = 62.564009
+offDiag[2] = 29.749659
+offDiag[3] = 11.875620
+offDiag[4] = 5.940982
+offDiag[5] = 3.494992
+offDiag[6] = 1.927072
+offDiag[7] = 1.492275
+offDiag[8] = 0.889247
+offDiag[9] = 0.504070
+offDiag[10] = 0.188590
+offDiag[11] = 0.029070
+offDiag[12] = 0.012380
+offDiag[13] = 0.000381
+offDiag[14] = 0.000066
+offDiag[15] = 0.000028
+offDiag[16] = 0.000000

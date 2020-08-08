@@ -1,0 +1,198 @@
+Exact integration = 17.57162681053757
+-----------------------------------------------------------------------------
+No. of Gaussian points = 1
+  No. of interval = 1
+	Integral= 	11.39354693335896
+	Absolute error= 	6.17807987717862
+
+	Relative Error=    0.35159407514128
+
+  No. of interval = 4
+	Integral= 	22.57209215553448
+	Absolute error= 	5.00046534499691
+
+	Relative Error=    0.28457611801761
+
+  No. of interval = 16
+	Integral= 	17.33223856763843
+	Absolute error= 	0.23938824289915
+
+	Relative Error=    0.01362356744087
+
+  No. of interval = 64
+	Integral= 	17.57827318180790
+	Absolute error= 	0.00664637127033
+
+	Relative Error=    0.00037824450417
+
+  No. of interval = 256
+	Integral= 	17.57204676224064
+	Absolute error= 	0.00041995170307
+
+	Relative Error=    0.00002389942079
+
+  No. of interval = 1024
+	Integral= 	17.57165306246745
+	Absolute error= 	0.00002625192988
+
+	Relative Error=    0.00000149399541
+
+  No. of interval = 4096
+	Integral= 	17.57162845129822
+	Absolute error= 	0.00000164076065
+
+	Relative Error=    0.00000009337557
+
+  No. of interval = 16384
+	Integral= 	17.57162691309565
+	Absolute error= 	0.00000010255807
+
+	Relative Error=    0.00000000583657
+
+No. of Gaussian points = 2
+  No. of interval = 1
+	Integral= 	12.00913322178907
+	Absolute error= 	5.56249358874850
+
+	Relative Error=    0.31656110437155
+
+  No. of interval = 4
+	Integral= 	17.38690745699310
+	Absolute error= 	0.18471935354447
+
+	Relative Error=    0.01051236493560
+
+  No. of interval = 16
+	Integral= 	17.51015926691146
+	Absolute error= 	0.06146754362611
+
+	Relative Error=    0.00349811342392
+
+  No. of interval = 64
+	Integral= 	17.57162581516083
+	Absolute error= 	0.00000099537674
+
+	Relative Error=    0.00000005664682
+
+  No. of interval = 256
+	Integral= 	17.57162679223433
+	Absolute error= 	0.00000001830324
+
+	Relative Error=    0.00000000104164
+
+  No. of interval = 1024
+	Integral= 	17.57162681046131
+	Absolute error= 	0.00000000007626
+
+	Relative Error=    0.00000000000434
+
+  No. of interval = 4096
+	Integral= 	17.57162681053884
+	Absolute error= 	0.00000000000127
+
+	Relative Error=    0.00000000000007
+
+  No. of interval = 16384
+	Integral= 	17.57162681052679
+	Absolute error= 	0.00000000001078
+
+	Relative Error=    0.00000000000061
+
+No. of Gaussian points = 3
+  No. of interval = 1
+	Integral= 	23.92211683843586
+	Absolute error= 	6.35049002789829
+
+	Relative Error=    0.36140592424203
+
+  No. of interval = 4
+	Integral= 	18.09979620204846
+	Absolute error= 	0.52816939151088
+
+	Relative Error=    0.03005808154281
+
+  No. of interval = 16
+	Integral= 	17.56906836545118
+	Absolute error= 	0.00255844508640
+
+	Relative Error=    0.00014560092324
+
+  No. of interval = 64
+	Integral= 	17.57162651082570
+	Absolute error= 	0.00000029971187
+
+	Relative Error=    0.00000001705658
+
+  No. of interval = 256
+	Integral= 	17.57162681048396
+	Absolute error= 	0.00000000005361
+
+	Relative Error=    0.00000000000305
+
+  No. of interval = 1024
+	Integral= 	17.57162681053488
+	Absolute error= 	0.00000000000270
+
+	Relative Error=    0.00000000000015
+
+  No. of interval = 4096
+	Integral= 	17.57162681053951
+	Absolute error= 	0.00000000000194
+
+	Relative Error=    0.00000000000011
+
+  No. of interval = 16384
+	Integral= 	17.57162681052672
+	Absolute error= 	0.00000000001085
+
+	Relative Error=    0.00000000000062
+
+No. of Gaussian points = 4
+  No. of interval = 1
+	Integral= 	21.77495485378666
+	Absolute error= 	4.20332804324909
+
+	Relative Error=    0.23921109232347
+
+  No. of interval = 4
+	Integral= 	17.54425902717954
+	Absolute error= 	0.02736778335803
+
+	Relative Error=    0.00155749855452
+
+  No. of interval = 16
+	Integral= 	17.57053305063450
+	Absolute error= 	0.00109375990307
+
+	Relative Error=    0.00006224579630
+
+  No. of interval = 64
+	Integral= 	17.57162681394108
+	Absolute error= 	0.00000000340351
+
+	Relative Error=    0.00000000019369
+
+  No. of interval = 256
+	Integral= 	17.57162681053520
+	Absolute error= 	0.00000000000238
+
+	Relative Error=    0.00000000000014
+
+  No. of interval = 1024
+	Integral= 	17.57162681053499
+	Absolute error= 	0.00000000000258
+
+	Relative Error=    0.00000000000015
+
+  No. of interval = 4096
+	Integral= 	17.57162681053951
+	Absolute error= 	0.00000000000194
+
+	Relative Error=    0.00000000000011
+
+  No. of interval = 16384
+	Integral= 	17.57162681052672
+	Absolute error= 	0.00000000001085
+
+	Relative Error=    0.00000000000062
+
