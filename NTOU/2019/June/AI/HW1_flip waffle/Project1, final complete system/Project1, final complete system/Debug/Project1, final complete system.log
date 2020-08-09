@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\jimmy\desktop\jimmy\學習\1072\人工智慧\project1, final complete system\project1, final complete system\source.cpp(198): warning C4101: 's': 未參考的區域變數
+c:\users\jimmy\desktop\jimmy\學習\1072\人工智慧\project1, final complete system\project1, final complete system\source.cpp(198): warning C4101: 'steps': 未參考的區域變數
+  Project1, final complete system.vcxproj -> C:\Users\Jimmy\Desktop\Jimmy\學習\1072\人工智慧\Project1, final complete system\Debug\Project1, final complete system.exe

@@ -1,0 +1,6 @@
+﻿  Source.cpp
+c:\users\jimmy\desktop\jimmy\學習\1072\人工智慧\project1, part4\project1, part4\source.cpp(185): warning C4101: 't': 未參考的區域變數
+c:\users\jimmy\desktop\jimmy\學習\1072\人工智慧\project1, part4\project1, part4\source.cpp(188): warning C4101: 'buf': 未參考的區域變數
+c:\users\jimmy\desktop\jimmy\學習\1072\人工智慧\project1, part4\project1, part4\source.cpp(189): warning C4101: 'str': 未參考的區域變數
+c:\users\jimmy\desktop\jimmy\學習\1072\人工智慧\project1, part4\project1, part4\source.cpp(188): warning C4101: 'cakeNums': 未參考的區域變數
+  Project1, part4.vcxproj -> C:\Users\Jimmy\Desktop\Jimmy\學習\1072\人工智慧\Project1, part4\Debug\Project1, part4.exe

@@ -1,10 +1,15 @@
 finished:
 
-2018 June:
-C++
-assembly
+	2018
+		June:
+			C++
+			assembly
 
-2019 Jan:
-Numerical Analysis(HW1,2,4,6)
-DBMS
+	2019 
+		Jan:
+			Numerical Analysis(HW1,2,4,6)
+			DBMS
 
+		June:
+			AI
+			Computer Vision(Intro., test, HW1,2,4)

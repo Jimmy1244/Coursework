@@ -1,0 +1,127 @@
+
+<html>
+	<head>
+		<title>Logic Proving Interface</title>
+	</head>
+	<body>
+		<table border=0 cellspacing=10>
+		<tr><td rowspan=2 valign="top">
+		<h4>Adding Premises</h4>
+		<label>Enter a premise: </label>
+		<button id="buttonAnd" onClick="addSymbolAnd()">&and;</button>
+		<button id="buttonOr" onClick="addSymbolOr()">&or;</button>
+		<button id="buttonImply" onClick="addSymbolImply()">&rarr;</button>
+		<button id="buttonEquiv" onClick="addSymbolEquiv()">&harr;</button>
+		<button id="buttonNot" onClick="addSymbolNot()">&not;</button>
+		<br>
+		<input type="text" id="newPremise">
+		<button id="buttonAddPremise" onClick="addPremise('newPremise')">Add premise</button>
+		<button id="buttonStartProve" onClick="startProving()">Start proving</button>
+		</td>
+		<td>
+		<b>Examples:</b><br>
+		(A)&rarr;(D)<br>
+		(&not;(A))&rarr;((&not;(D))&rarr;(C))<br>
+		(D)&or;((I)&and;(S))<br>
+		((D)&rarr;(L))&and;((L)&rarr;(S))<br>
+		(T)&rarr;((E)&or;(&not;(L)))<br>
+		((E)&rarr;(M))&and;((&not;(L))&rarr;(K))<br>
+		(C)&rarr;(Y)<br>
+		(Y)&harr;(D)<br>
+		(A)&and;(&not;(B))<br>
+		(B)&or;((A)&rarr;(D))<br>
+		((C)&and;(E))&harr;(D)<br>
+		</td></tr></table>
+		<hr>
+		
+		<table border=0 cellspacing=10>
+		<tr><td rowspan=2 valign="top" style="border: 1px solid;">
+		<div style="margin: 15px;">
+		<h4>Facts<br> 
+		<select id="premiseList" size=2 onclick="setSentence2()" ondblclick="setSentence1()">
+		</select><br>
+		<select id="proofStep" style="display:none;">
+		</select><br>
+		<button id="showProofStep" onClick="showingProofStep()">Show proving steps</button>
+		</div>
+		<div id="proofStepText">
+		</div>
+		</td>
+		<td style="border: 1px solid;">
+		<div style="margin: 15px;">
+		<h4>Inference</h4>
+		<label>Sent1: </label><label id="infSent1"></label><label id="infRuleID1" style="display:none;"></label><br>
+		<label>Sent2: </label><label id="infSent2"></label><label id="infRuleID2" style="display:none;"></label><br>
+		<label id="infAddLabel" style="display:none;">q-part: </label><input type="text" id="infAdd" style="display:none;"><br>
+		<select id="infRules" onchange="infCheckElementShow()" disabled>
+		<option value="MP">MP: Modus Ponens {p&rarr;q, p} &#8866; {q}</option>
+		<option value="MT">MT: Modus Tollens {p&rarr;q, &not;q} &#8866; {&not;p}</option>
+		<option value="Res">Res: Resolution {p&or;q, &not;p&or;r} &#8866; {q&or;r}</option>
+		<option value="DS">DS: Disjunctive Syllogism {p&or;q, &not;q} &#8866; {p}</option>
+		<option value="Conj">Conj: Conjunction {p, q} &#8866; {p&and;q}</option>
+		<option value="Simp">Simp: Simplification {p&and;q} &#8866; {p}</option>
+		<option value="HS">HS: Hypothetical Syllogism {p&rarr;q, q&rarr;r} &#8866; {p&rarr;r}</option>
+		<option value="Add">Add: Addition {p} &#8866; {p&or;q}</option>
+		<option value="CD">CD: Constructive Dilemma {(p&rarr;q)&or;(r&rarr;s), p&or;r} &#8866; {q&or;s}</option>
+		</select>
+		<button id="infSubmitButton" onClick="inference()" disabled>Submit inference</button><br>
+		<label>Output: </label><label id="infOutput"></label><br>
+		<button id="infAddButton" onClick="addPremise('infOutput')" disabled>Add to fact list</button><br>
+		</div>
+		</td>
+		</tr>
+		<tr><td style="border: 1px solid;">
+		<div style="margin: 15px;">
+		<h4>Replacement</h4>
+		<label>Sent: </label><label id="rplSent"></label><label id="rplRuleID" style="display:none;"></label><br>
+		<label id="rplAddLabel">p-part: </label><input type="text" id="rplAdd1"><br>
+		<label id="rplAddLabe2" style="display:none;">q-part: </label><input type="text" id="rplAdd2" style="display:none;"><br>
+		<label id="rplAddLabe3" style="display:none;">r-part: </label><input type="text" id="rplAdd3" style="display:none;"><br>
+		<select id="rplRules" onchange="rplCheckElementShow()" disabled>
+		<option value="DN_1_1">DN: Double Negation &not;&not;p &equiv;&equiv;&gt; p</option>
+		<option value="DN_1_2">DN: Double Negation &not;&not;p &lt;&equiv;&equiv; p</option>
+		<option value="Comm_1_1">Comm: Commutation Law p&and;q .&equiv;&equiv;. q&and;p</option>
+		<option value="Comm_2_1">Comm: Commutation Law p&or;q .&equiv;&equiv;. q&or;p</option>
+		<option value="Assoc_1_1">Assoc: Association Law (p&and;q)&and;r &equiv;&equiv;&gt; p&and;(q&and;r)</option>
+		<option value="Assoc_1_2">Assoc: Association Law (p&and;q)&and;r &lt;&equiv;&equiv; p&and;(q&and;r)</option>
+		<option value="Assoc_2_1">Assoc: Association Law (p&or;q)&or;r &equiv;&equiv;&gt; p&or;(q&or;r)</option>
+		<option value="Assoc_2_2">Assoc: Association Law (p&or;q)&or;r &lt;&equiv;&equiv; p&or;(q&or;r)</option>
+		<option value="Dist_1_1">Dist: Distribution Law p&and;(q&or;r) &equiv;&equiv;&gt; (p&and;q)&or;(p&and;r)</option>
+		<option value="Dist_1_2">Dist: Distribution Law p&and;(q&or;r) &lt;&equiv;&equiv; (p&and;q)&or;(p&and;r)</option>
+		<option value="Dist_2_1">Dist: Distribution Law p&or;(q&and;r) &equiv;&equiv;&gt; (p&or;q)&and;(p&or;r)</option>
+		<option value="Dist_2_2">Dist: Distribution Law p&or;(q&and;r) &lt;&equiv;&equiv; (p&or;q)&and;(p&or;r)</option>
+		<option value="DeM_1_1">DeM: De Morgan's Law &not;(p&and;q) &equiv;&equiv;&gt; &not;p&or;&not;q</option>
+		<option value="DeM_1_2">DeM: De Morgan's Law &not;(p&and;q) &lt;&equiv;&equiv; &not;p&or;&not;q</option>
+		<option value="DeM_2_1">DeM: De Morgan's Law &not;(p&or;q) &equiv;&equiv;&gt; &not;p&and;&not;q</option>
+		<option value="DeM_2_2">DeM: De Morgan's Law &not;(p&or;q) &lt;&equiv;&equiv; &not;p&and;&not;q</option>
+		<option value="Impl_1_1">Impl: Implication Law p&rarr;q &equiv;&equiv;&gt; &not;p&or;q</option>
+		<option value="Impl_1_2">Impl: Implication Law p&rarr;q &lt;&equiv;&equiv; &not;p&or;q</option>
+		<option value="Contra_1_1">Contra: Contraposition Law p&rarr;q &equiv;&equiv;&gt; &not;q&rarr;&not;p</option>
+		<option value="Contra_1_2">Contra: Contraposition Law p&rarr;q &lt;&equiv;&equiv; &not;q&rarr;&not;p</option>
+		<option value="Equiv_1_1">Equiv: Equivalence Law p&harr;q &equiv;&equiv;&gt; (p&rarr;q)&and;(q&rarr;p)</option>
+		<option value="Equiv_1_2">Equiv: Equivalence Law p&harr;q &lt;&equiv;&equiv; (p&rarr;q)&and;(q&rarr;p)</option>
+		<option value="Equiv_2_1">Equiv: Equivalence Law p&harr;q &equiv;&equiv;&gt; (p&and;q)&or;(&not;p&and;&not;q)</option>
+		<option value="Equiv_2_2">Equiv: Equivalence Law p&harr;q &lt;&equiv;&equiv; (p&and;q)&or;(&not;p&and;&not;q)</option>
+		<option value="Exp_1_1">Exp: Exportation Law (p&and;q)&rarr;r &equiv;&equiv;&gt; p&rarr;(q&rarr;r)</option>
+		<option value="Exp_1_2">Exp: Exportation Law (p&and;q)&rarr;r &lt;&equiv;&equiv; p&rarr;(q&rarr;r)</option>
+		<option value="Idem_1_1">Idem: Idempotant Law p&and;p &equiv;&equiv;&gt; p</option>
+		<option value="Idem_1_2">Idem: Idempotant Law p&and;p &lt;&equiv;&equiv; p</option>
+		<option value="Idem_2_1">Idem: Idempotant Law p&or;p &equiv;&equiv;&gt; p</option>
+		<option value="Idem_2_2">Idem: Idempotant Law p&or;p &lt;&equiv;&equiv; p</option>
+		<option value="Abs_1_1">Abs: Absorption Law p&and;(p&or;q) &equiv;&equiv;&gt; p</option>
+		<option value="Abs_1_2">Abs: Absorption Law p&and;(p&or;q) &lt;&equiv;&equiv; p</option>
+		<option value="Abs_2_1">Abs: Absorption Law p&or;(p&and;q) &equiv;&equiv;&gt; p</option>
+		<option value="Abs_2_2">Abs: Absorption Law p&or;(p&and;q) &lt;&equiv;&equiv; p</option>
+		</select>
+		<button id="rplSubmitButton" onClick="replacement()" disabled>Submit replacement</button><br>
+		<label>Output: </label><label id="rplOutput"></label><br>
+		<button id="rplAddButton" onClick="addPremise('rplOutput')" disabled>Add to fact list</button><br>
+		</div>
+		</td>
+		</tr>
+		</table>
+	
+	<script src="logicProving.js"></script>
+	</body>
+</html>
+
