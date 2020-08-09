@@ -13,3 +13,4 @@ finished:
 		June:
 			AI
 			Computer Vision(Intro., test, HW1,2,4)
+
