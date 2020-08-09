@@ -6,4 +6,5 @@ assembly
 
 2019 Jan:
 Numerical Analysis(HW1,2,4,6)
+DBMS
 
