@@ -6,6 +6,8 @@ finished:
 			Introduction of Data Strutures
 
 	2018
+		Jane:
+			Part of Introduction of Algorithm
 		June:
 			C++
 			assembly
