@@ -1,13 +1,13 @@
 finished:
 	2018
 		Jan:
-			Introduction of Programming
+			Introduction to Programming
 		June:
-			Introduction of Data Strutures
+			Introduction to Data Strutures
 
 	2018
 		Jane:
-			Part of Introduction of Algorithm(before 2018.11.17)
+			Part of Introduction to Algorithm(before 2018.11.17)
 		June:
 			C++
 			assembly
