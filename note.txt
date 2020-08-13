@@ -7,7 +7,7 @@ finished:
 
 	2018
 		Jane:
-			Part of Introduction of Algorithm
+			Part of Introduction of Algorithm(before 2018.11.17)
 		June:
 			C++
 			assembly
