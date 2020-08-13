@@ -1,4 +1,9 @@
 finished:
+	2018
+		Jan:
+			Introduction of Programming
+		June:
+			Introduction of Data Strutures
 
 	2018
 		June:
